@@ -1,10 +1,6 @@
 import * as app from '../app';
 import * as http from 'http';
-import * as debug from 'debug';
 
-// binding to console
-let log = debug('icr-v2:server');
-log.log = console.log.bind(console);
 
 let PORT = process.env.PORT || '3000';
 
@@ -37,6 +33,5 @@ server.on('error', (error) => {
 server.on('listening', () => {
     const addr = server.address();
     const bind = (typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`);
-    log(`Listening on ${bind}`);
-    console.log('Listening on port: ' + bind);
+    console.log(`zb04 - Listening on ${bind}`);
 });
